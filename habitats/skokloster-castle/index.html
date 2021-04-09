@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Aframe Habitat Example</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      
+      <a-assets>
+        <a-asset-item id="habitat" src="assets/skokloster-castle.glb"></a-asset-item>
+        <a-asset-item id="navmesh" src="assets/skokloster-castle-navmesh.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-sky color="#999"></a-sky>
+
+      <a-entity id="rig" movement-controls="constrainToNavMesh: true">
+        <a-entity position="0 1.6 0" id="camera" camera look-controls="pointerLockEnabled: true"></a-entity>></a-entity>
+      </a-entity>
+
+      <a-entity id="room" position="0 0 8" rotation="90 0 0">
+        <a-plane  height="25" position="-1 -14 -0.05" width="20" rotation="180 0 0" visible="false"></a-plane>
+        <a-entity gltf-model="#habitat" scale="1 1 -1" ></a-entity>
+      </a-entity>
+
+      <a-entity visible="false" gltf-model="#navmesh" nav-mesh></a-entity>
+
+    </a-scene>
+  </body>
+</html>
