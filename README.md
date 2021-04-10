@@ -1,5 +1,3 @@
-# aframe-habitats
-
 Lets beam some of the awesomeness of [AI Habitat](https://aihabitat.org/) over to A-Frame, so we can prototype IoT/AI simulations directly in the browser.
 
 ## Rooms
